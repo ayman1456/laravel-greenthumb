@@ -6,12 +6,18 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    function contactus(){
-     
+    function contactus()
+    {
+
         return view('contactus');
     }
-    function aboutus(){
-     
+    function aboutus()
+    {
+
         return view('aboutus');
+    }
+    function userProfile()
+    {
+        return view('frontend.userProfile');
     }
 }
