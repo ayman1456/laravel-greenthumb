@@ -1,23 +1,43 @@
 /** COMMON CSS STARTS HERE */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-ul,ol{
+:root {
+    --primaryColor: #6f9e6f;
+}
+ul,
+ol {
     list-style: none;
 }
-a{
+a {
     text-decoration: none;
 }
-h1,h2,h3,h4,h5,h6,ul,p,span,ol{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p,
+span,
+ol {
     margin: 0;
     padding: 0;
 }
-body{
+body {
     font-family: "arial";
 }
+.btn-general{
+    padding: 15px 23px;
+    border: none;
+    color: white;
+    background-color: var(--primaryColor);
 
+
+}
 /** COMMON CSS ENDS HERE */
 .topnav {
     overflow: hidden;
@@ -30,8 +50,6 @@ body{
     z-index: 99999;
 }
 
-
-
 .navLinks a,
 .topnav a {
     display: inline-block;
@@ -39,19 +57,25 @@ body{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-family: "Times New Roman", Times, serif;
+
     font-size: 17px;
 }
-
-@media (max-width:991px){
-  .navLinks a{
-    display: block;
-    
-  }
+.offcanvas {
+    transition: 0.35s ease;
 }
 
+.menu span {
+    font-size: 20px;
+}
 
-
+@media (max-width: 991px) {
+    .navLinks a {
+        display: block;
+    }
+}
+.sidebarSm .navLinks a {
+    text-align: left;
+}
 .navLinks a:hover,
 .navitems a:hover {
     background-color: rgba(124, 144, 135, 255);
@@ -104,20 +128,38 @@ body{
 }
 
 .section1 {
-    background-image: url("../images/bannerhd.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 70vh;
 }
 
 .section1 h1 {
-    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
     color: rgba(124, 144, 135, 255);
 }
 
 #chead {
-    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
     width: fit-content;
+    position: relative;
+}
+
+#chead::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+
+    height: 2px;
+    border-radius: 45px;
+    background-color: black;
+    transition: 0.25s ease;
+}
+
+section:hover > #chead::after {
+    width: 100%;
 }
 
 .allcards {
@@ -129,12 +171,12 @@ body{
 .footer {
     margin: 40px 0px 0px 0px;
     padding: 30px;
-    display: flex;
+
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #aeaeae;
-    color: rgb(0, 0, 0);
+    background-color: #1a1a1a;
+    color: white;
 }
 
 .foot3 img {
@@ -180,4 +222,42 @@ body{
     right: 20px;
     color: #aaa;
     cursor: pointer;
+}
+
+.footer h5 {
+    position: relative;
+    margin-bottom: 18px;
+}
+.footer h5::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 20%;
+
+    height: 2px;
+    border-radius: 45px;
+    background-color: white;
+}
+
+.footer .foot a,
+.footer .foot p {
+    font-size: 14px;
+    color: #ccc;
+    display: block;
+    transition: 0.3s ease;
+    margin: 8px 0;
+}
+
+.footer .foot a:hover {
+    margin-left: 10px;
+    color: white;
+}
+
+.footer_bottom {
+    background-color: #111;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    font-size: 12px;
 }

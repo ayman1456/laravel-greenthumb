@@ -1,0 +1,37 @@
+@extends('layout.frontend')
+
+@section('content')
+@push('customCssFrontend')
+<link rel="stylesheet" href="{{ asset('assets/css/userProfile.css') }}">
+@endpush
+<section id="profileWrapper">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="m-auto  profileContainer">
+                <div class="row h-100">
+                    <div class="col-lg-3 profileMenu">
+                        <ul>
+                            <li><a href="#"> <span class="me-2"><i class="bi bi-pie-chart"></i></span> Dashboard</a>
+                            </li>
+                            <li class="{{ request()->routeIs('profile') ? 'active' : null }}"><a href="#"><span
+                                        class="me-2"><i class="bi bi-person"></i></span>Profile</a></li>
+                            <li class=""> <a href="#"><span class="me-2"><i class="bi bi-archive"></i></span> My
+                                    Orders</a></li>
+                            <li class=""> <a href="#"><span class="me-2"><i class="bi bi-stars"></i></span> Reviews</a>
+                            </li>
+                            <li class=""> <a href="{{ route('logout') }}" onclick=""><span class="me-2"><i
+                                            class="bi bi-box-arrow-in-left"></i></span> Logout</a>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf</form>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-9 profileContent">
+                        @yield('userProfile')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection

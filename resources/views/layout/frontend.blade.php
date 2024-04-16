@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="{{asset('assets/css/index.css')}}" rel="stylesheet">
+  @stack('customCssFrontend')
   <title>GreenThumb</title>
 </head>
 
@@ -28,7 +29,7 @@
 
         <ul class="navbar-nav m-auto mb-2 mb-lg-0 align-items-center">
           <li class="nav-item">
-            <form action=""><input class="navsearch" type="text"></form>
+            <form action=""><input placeholder="Search here...." class="navsearch" type="text"></form>
           </li>
           <li class="nav-item mx-4 ">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -67,20 +68,17 @@
   {{-- NAVBAR SM --}}
   <nav class="py-4 d-lg-none">
     <div class="container">
-      <div class="row">
-        <div class="logo col-6">
-          <a class="navbar-brand" href="#">
-            <img src="{{asset('assets/images/isolated-monochrome-black.svg')}}" height="100%" width="100px">
-          </a>
-        </div>
-        <div class="menu col-6 text-end">
-          <a  class="text-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+      <div class="row align-items-center">
+
+        <div class="menu col-2 end">
+          <a class="text-dark" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
             aria-controls="offcanvasExample">
-              <span><i class="bi bi-list-nested"></i></span>            
+            <span><i class="bi bi-list-nested"></i></span>
           </a>
 
-          
-          <div class="offcanvas sidebarSm offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+
+          <div class="offcanvas sidebarSm offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
             <div class="searchArea">
               <form action="">
                 <input type="text" placeholder="Search...">
@@ -88,15 +86,31 @@
               </form>
             </div>
 
-            <div class="navLinks  text-center mt-4">
+            <div class="navLinks  text-start mt-4">
               <ul>
-                <li><a  href="#">Home</a></li>
-                <li><a  href="#">Categories</a></li>
-                <li><a  href="#">Contact</a></li>
-                <li><a  href="#">About</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
               </ul>
             </div>
 
+
+          </div>
+        </div>
+        <div class="logo col text-center">
+          <a class="navbar-brand" href="#">
+            <img src="{{asset('assets/images/isolated-monochrome-black.svg')}}" height="100%" width="100px">
+          </a>
+        </div>
+
+        <div class="col-3 text-end">
+          <div class="quickLinks">
+            <ul class="d-flex justify-content-end">
+              <li class="mx-2"><a class="text-dark" href="#"><i class="fa-regular fa-user"></i></a></li>
+              <li class="mx-2"><a class="text-dark" href="#"><i class="fa-regular fa-heart"></i></i></a></li>
+              <li class="mx-2"><a class="text-dark" href="#"><i class="bi bi-bag"></i></a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -114,40 +128,52 @@
 
   <div class="footer">
 
-    <div class="foot1">
-      <h1>Opening time</h1>
-      <p>Monday-Friday: 9:00am-5:00pm</p>
-      <p>Saturday: 10:00am-2:00pm</p>
-      <p>Sunday: Closed</p>
+    <div class="container">
+      <div class="row align-items-lg-center">
+        <div class="col-lg  col-6 order-2 order-lg-1">
+          <div class="foot">
+            <h5>Opening time</h5>
+            <p>Monday-Friday: 9:00am-5:00pm</p>
+            <p>Saturday: 10:00am-2:00pm</p>
+            <p>Sunday: Closed</p>
+          </div>
+        </div>
+        <div class="col-lg  col-6 order-3 order-lg-2">
+          <div class="foot">
+            <h5>Information</h5>
+            <a href="#">About us</a>
+            <a href="#">Contact us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+        </div>
+        <div class="col-lg-4  order-1 order-lg-3 text-center">
+          <div class="foot3">
+            <img src="{{ asset('assets/images/isolated-monochrome-white.svg') }} " class="w-50">
+          </div>
+        </div>
+        <div class="col-lg  col-6 order-4 mt-3 mt-lg-0">
+          <div class="foot">
+            <h5>Follow us</h5>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Youtube</a>
+          </div>
+        </div>
+        <div class="col-lg  col-6 order-5 mt-3 mt-lg-0">
+          <div class="foot">
+            <h5>Contact us</h5>
+            <a href="#">+254700000000</a>
+            <a href="#">+254700000000</a>
+            <a href="#">+254700000000</a>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="foot2">
-      <h1>Information</h1>
-      <p>About us</p>
-      <p>Contact us</p>
-      <p>Privacy Policy</p>
-      <p>Terms & Conditions</p>
-    </div>
-
-
-    <div class="foot3">
-      <img src="{{ asset('assets/images/profile.png') }}">
-    </div>
-
-    <div class="foot4">
-      <h1>Follow us</h1>
-      <p>Facebook</p>
-      <p>Instagram</p>
-      <p>Twitter</p>
-      <p>Youtube</p>
-    </div>
-
-    <div class="foot5">
-      <h1>Contact us</h1>
-      <p>+254700000000</p>
-      <p>+254700000000</p>
-      <p>+254700000000</p>
-    </div>
+  </div>
+  <div class="footer_bottom">
+    <p>{{ env('APP_NAME') }} 2024 CREATED BY Afrin (Web Developer).</p>
   </div>
 
   <!--footer ends-->

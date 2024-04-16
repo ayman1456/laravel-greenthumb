@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BackendController;
@@ -21,5 +22,3 @@ Route::get('/about-us', [MainController::class, 'aboutus'])->name('aboutus');
 Route::get('/dashboard', [BackendController::class, 'dashboard'])->name('dashboard');
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
