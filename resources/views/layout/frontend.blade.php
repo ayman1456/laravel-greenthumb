@@ -18,7 +18,7 @@
   <nav class="navbar topnav navbar-expand-lg bg-body-tertiary d-none d-lg-block">
     <div class="container-fluid justify-content-lg-between">
       <a class="navbar-brand" href="#">
-        <img src="{{asset('assets/images/isolated-monochrome-black.svg')}}" height="100%" width="100px">
+        <img src="{{asset('assets/img/isolated-monochrome-black.svg')}}" height="100%" width="100px">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,7 @@
         </div>
         <div class="logo col text-center">
           <a class="navbar-brand" href="#">
-            <img src="{{asset('assets/images/isolated-monochrome-black.svg')}}" height="100%" width="100px">
+            <img src="{{asset('assets/img/isolated-monochrome-black.svg')}}" height="100%" width="100px">
           </a>
         </div>
 
@@ -149,7 +149,7 @@
         </div>
         <div class="col-lg-4  order-1 order-lg-3 text-center">
           <div class="foot3">
-            <img src="{{ asset('assets/images/isolated-monochrome-white.svg') }} " class="w-50">
+            <img src="{{ asset('assets/img/isolated-monochrome-white.svg') }} " class="w-50">
           </div>
         </div>
         <div class="col-lg  col-6 order-4 mt-3 mt-lg-0">

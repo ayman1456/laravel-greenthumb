@@ -6,7 +6,7 @@
 <!--second section-->
 <section id="banner">
   <a href="#">
-    <div class="section1" style="background-image: url({{ asset('assets/images/bannerhd.png') }});">
+    <div class="section1" style="background-image: url({{ asset('assets/img/bannerhd.png') }});">
     
     </div>
   </a>
@@ -27,7 +27,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
   
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ asset('assets/images/product/product1.jpg') }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('assets/img/product/product1.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -39,7 +39,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
   
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ asset('assets/images/product/product1.jpg') }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('assets/img/product/product1.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -51,7 +51,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
   
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ asset('assets/images/product/product1.jpg') }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('assets/img/product/product1.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -63,7 +63,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
   
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ asset('assets/images/product/product1.jpg') }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('assets/img/product/product1.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -95,7 +95,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
   
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ asset('assets/images/product/product1.jpg') }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('assets/img/product/product1.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -107,7 +107,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
   
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ asset('assets/images/product/product1.jpg') }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('assets/img/product/product1.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -119,7 +119,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
   
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ asset('assets/images/product/product1.jpg') }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('assets/img/product/product1.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -131,7 +131,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
   
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ asset('assets/images/product/product1.jpg') }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('assets/img/product/product1.jpg') }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's

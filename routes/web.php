@@ -20,5 +20,4 @@ Route::get('/about-us', [MainController::class, 'aboutus'])->name('aboutus');
 
 //backend
 Route::get('/dashboard', [BackendController::class, 'dashboard'])->name('dashboard');
-
 Auth::routes();
