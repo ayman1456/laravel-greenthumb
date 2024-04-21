@@ -2,21 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    function products(){
-        $products= Product::latest()->get();
-        return view('backend.products', compact('products'));
+    function products()
+    {
+        $products = Product::latest()->get();
+        $categories = Category::get();
+
+        return view('backend.products', compact('products', 'categories'));
     }
-    function editProducts($id) {
-        $products= Product::latest()->get();
+    function editProducts($id)
+    {
+        $products = Product::latest()->get();
         $editedProducts = Product::find($id);
-        return view('backend.products', compact('products', 'editedProducts'));
+        $categories = Category::get();
+        return view('backend.products', compact('products', 'editedProducts', 'categories'));
     }
-    function deleteProducts($id) {
+    function deleteProducts($id)
+    {
         Product::find($id)->delete();
         return back();
     }
@@ -41,8 +48,7 @@ class ProductController extends Controller
             $products->image = $fileName;
         }
         $products->save();
-        //$products->categories()->sync($req->categories);
+        $products->categories()->sync($req->categories);
         return back();
     }
-
 }

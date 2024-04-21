@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 //frontend
 Route::get('/', function () {
@@ -24,7 +25,7 @@ Route::get('/about-us', [MainController::class, 'aboutus'])->name('aboutus');
 Route::get('/dashboard', [BackendController::class, 'dashboard'])->name('dashboard');
 
 //products routes
-Route::get('/products', [ProductController::class,'products'])->name('products.show');
+Route::get('/products', [ProductController::class, 'products'])->name('products.show');
 Route::get('/products/edit/{id}', [ProductController::class, 'editProducts'])->name('products.edit');
 Route::post('/products/{id?}', [ProductController::class, 'saveProducts'])->name('products.save');
 Route::get('/products-delete/{id}', [ProductController::class, 'deleteProducts'])->name('products.delete');

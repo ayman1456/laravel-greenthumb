@@ -37,7 +37,7 @@
   <!-- Helpers -->
   <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
   <script src="{{ asset('assets/js/config.js') }}"></script>
-
+  @stack('customCss')
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
 </head>
@@ -113,6 +113,12 @@
               <div data-i18n="Analytics">Dashboard</div>
             </a>
           </li>
+          <li class="menu-item {{ request()->routeIs('category.*') ? 'active' : null }}">
+            <a href="{{ route('category.show') }}" class="menu-link">
+              <i class="fa-solid fa-tag"></i>
+              <div data-i18n="Analytics">Categories</div>
+            </a>
+          </li>
           <li class="menu-item {{ request()->routeIs('products.show') ? 'active' : null }}">
             <a href="{{ route('products.show') }}" class="menu-link">
               <i class="fa-solid fa-tag"></i>
@@ -120,12 +126,7 @@
             </a>
           </li>
 
-          <li class="menu-item {{ request()->routeIs('products.show') ? 'active' : null }}">
-            <a href="{{ route('products.show') }}" class="menu-link">
-              <i class="fa-solid fa-tag"></i>
-              <div data-i18n="Analytics">Categories</div>
-            </a>
-          </li>
+
 
 
         </ul>
@@ -232,6 +233,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
+
+  @stack('customJs')
+
 </body>
 
 </html>
