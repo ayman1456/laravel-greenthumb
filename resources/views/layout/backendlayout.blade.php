@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
@@ -130,16 +131,23 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
+            <li class="menu-item {{ request()->routeIs('dashboard') ? 'active' : null }}">
               <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item ">
-                <a href="index.html" class="menu-link">
+            <li class="menu-item {{ request()->routeIs('products.show') ? 'active' : null }}">
+                <a href="{{ route('products.show') }}" class="menu-link">
                     <i class="fa-solid fa-tag"></i> 
                   <div data-i18n="Analytics">Products</div>
+                </a>
+              </li>
+
+              <li class="menu-item {{ request()->routeIs('products.show') ? 'active' : null }}">
+                <a href="{{ route('products.show') }}" class="menu-link">
+                    <i class="fa-solid fa-tag"></i> 
+                  <div data-i18n="Analytics">Categories</div>
                 </a>
               </li>
 
@@ -260,5 +268,6 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
