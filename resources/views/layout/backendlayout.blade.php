@@ -115,13 +115,14 @@
           </li>
           <li class="menu-item {{ request()->routeIs('category.*') ? 'active' : null }}">
             <a href="{{ route('category.show') }}" class="menu-link">
-              <i class="fa-solid fa-tag"></i>
-              <div data-i18n="Analytics">Categories</div>
+              <i class="menu-icon fa-solid fa-tag"></i>
+              <div data-i18n="Analytics"> Categories</div>
             </a>
           </li>
           <li class="menu-item {{ request()->routeIs('products.show') ? 'active' : null }}">
             <a href="{{ route('products.show') }}" class="menu-link">
-              <i class="fa-solid fa-tag"></i>
+            <i class="menu-icon fa-brands fa-product-hunt"></i>
+           
               <div data-i18n="Analytics">Products</div>
             </a>
           </li>
