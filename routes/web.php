@@ -6,6 +6,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 
 //frontend
 Route::get('/', function () {
@@ -36,6 +37,11 @@ Route::get('/category', [CategoryController::class, 'showCategory'])->name('cate
 Route::get('/category/edit/{id}', [CategoryController::class, 'editCategory'])->name('category.edit');
 Route::post('/category/{id?}', [CategoryController::class, 'saveCategory'])->name('category.save');
 Route::get('/category-delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
+
+
+//orders route
+Route::get('/orders', [OrderController::class, 'orders'])->name('orders.show');
+
 
 
 Auth::routes();

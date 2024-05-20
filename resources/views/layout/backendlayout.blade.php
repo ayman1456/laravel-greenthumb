@@ -50,6 +50,7 @@
 
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
+          <!--
           <a href="index.html" class="app-brand-link">
             <span class="app-brand-logo demo">
               <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -97,6 +98,8 @@
             </span>
             <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
           </a>
+          -->
+          <img src="{{asset('storage/products/brandlogo.png')}}" style="width:100%">
 
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
             <i class="bx bx-chevron-left bx-sm align-middle"></i>
@@ -124,6 +127,13 @@
             <i class="menu-icon fa-brands fa-product-hunt"></i>
            
               <div data-i18n="Analytics">Products</div>
+            </a>
+          </li>
+          <li class="menu-item {{ request()->routeIs('orders.show') ? 'active' : null }}">
+            <a href="{{ route('orders.show') }}" class="menu-link">
+            <i class="menu-icon fa-solid fa-boxes-stacked"></i>
+           
+              <div data-i18n="Analytics">Orders</div>
             </a>
           </li>
 
