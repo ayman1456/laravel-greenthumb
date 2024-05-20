@@ -106,7 +106,10 @@
               <td><img src="{{ asset('storage/'.$product->image) }}" alt="" class="w-100"></td>
               <td class="text-center">{{ $product->name }}</td>
               <td>{{ $product->price }}</td>
-
+              <td>@foreach ($product->categories as $category)
+                <span>{{$category->title}}</span>
+                @endforeach
+              </td>
               <td>
                 <a href="{{ route('products.edit', $product->id) }}" class="text-primary"><i
                     class="fa-solid fa-pencil"></i></a>

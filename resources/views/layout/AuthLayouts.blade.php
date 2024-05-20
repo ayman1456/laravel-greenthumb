@@ -20,7 +20,7 @@
 
         <section class="m-auto">
             <div class="row h-100">
-                <div class="banner col-lg-6" style="background: url({{ asset('assets/images/AuthBanner.jpg') }})"></div>
+                <div class="banner col-lg-6" style="background: url({{ asset('assets/img/AuthBanner.jpg') }})"></div>
                 <div class="col-lg-6 authForms">
                     <div class="row h-100 align-items-center">
                         <div class="cnt">@yield('authContent')</div>

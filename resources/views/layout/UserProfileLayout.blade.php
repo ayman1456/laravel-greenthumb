@@ -19,9 +19,9 @@
                                     Orders</a></li>
                             <li class=""> <a href="#"><span class="me-2"><i class="bi bi-stars"></i></span> Reviews</a>
                             </li>
-                            <li class=""> <a href="{{ route('logout') }}" onclick=""><span class="me-2"><i
+                            <li class=""> <a href="{{ route('logout') }}" onclick="event.preventDefault();document.querySelector('#logout').submit()"><span class="me-2"><i
                                             class="bi bi-box-arrow-in-left"></i></span> Logout</a>
-                                <form action="{{ route('logout') }}" method="POST">
+                                <form id="logout" action="{{ route('logout') }}" method="POST">
                                     @csrf</form>
                             </li>
                         </ul>

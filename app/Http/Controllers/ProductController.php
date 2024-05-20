@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     function products()
     {
-        $products = Product::latest()->get();
+        $products = Product::with("categories")->latest()->get();
         $categories = Category::get();
 
         return view('backend.products', compact('products', 'categories'));
