@@ -10,7 +10,7 @@ use App\Http\Controllers\OrderController;
 
 //frontend
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 })->name('home');
 
 Route::middleware('auth')->group(function () {
@@ -37,6 +37,21 @@ Route::get('/category', [CategoryController::class, 'showCategory'])->name('cate
 Route::get('/category/edit/{id}', [CategoryController::class, 'editCategory'])->name('category.edit');
 Route::post('/category/{id?}', [CategoryController::class, 'saveCategory'])->name('category.save');
 Route::get('/category-delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
+
+
+
+//cart routes
+Route::prefix('/cart')->name('cart.')->controller(CartController::class)->group(function () {
+    Route::get('/add/{id}', 'addToCart')->name('add');
+    Route::get('/view', 'viewCart')->name('view');
+    Route::POST('/update', 'updateCart')->name('update');
+    Route::GET('/delete/{id}', 'deleteCart')->name('delete');
+});
+Route::prefix('/checkout')->name('checkout.')->controller(CheckoutController::class)->group(function () {
+    Route::get('/', 'checkout')->name('view');
+});
+
+
 
 
 //orders route
