@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -11,13 +12,53 @@ class MainController extends Controller
     function home() {
         $products = Product::latest()->take(12)->get();
         $featuredProducts = $products->where('featured',true);
+
+        // dd($products);
         
         return view('homepage', compact('featuredProducts', 'products'));
     }
 
+
+    function addToCart($id) {
+
+        $isExists = Cart::where('user_id', auth()->id())->where('product_id', $id)->exists();
+
+        if($isExists){
+            $cart = Cart::where('product_id', $id)->where('user_id', auth()->id())->first();
+            $cart->qty += 1;
+            $cart->save();
+        } else{
+            $cart = new Cart();
+            $cart->user_id = auth()->id();
+            $cart->product_id = $id;
+            $cart->qty = 1;
+            $cart->save();
+            
+        }
+
+
+
+        return back();
+    }
+
+
+    // function productCount() {
+    //    $test = Cart::select('id','qty')->get();
+    //    dd($test);
+    // }
+
+
     function productShow($id) {
-        $product = Product::findOrFail($id);
-        // return view('', compact('product'));
+        $product = Product::with('categories:id')->findOrFail($id);
+        $categorIds = $product->categories->pluck('id');
+
+
+        $filteredProducts = Product::whereNot('id', $id)->whereHas('categories', function ($query) use ($categorIds) {
+            $query->whereIn('category_id', $categorIds);
+        })->get();
+
+
+        return view('frontend.productview', compact('product','filteredProducts'));
     }
 
 
@@ -42,7 +83,6 @@ class MainController extends Controller
             $query->where('category_id', $id);
         })->get();
         $category  = Category::find($id,['id','title']);
-        
         return view('frontend.CategoryArcheive', compact('products', 'category'));   
         
     }

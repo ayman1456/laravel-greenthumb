@@ -18,6 +18,8 @@ Route::get('/about-us', [MainController::class, 'aboutus'])->name('aboutus');
 
 Route::get('/category/{id}', [MainController::class, 'categoryArcheive'])->name('category.archeive');
 Route::get('/product/{id}', [MainController::class, 'productShow'])->name('product.show');
+Route::get('/add-to-cart/{id}', [MainController::class, 'addToCart'])->name('cart.add')->middleware('auth');
+// Route::get('/product-count', [MainController::class, 'productCount'])->name('product.count');
 
 
 

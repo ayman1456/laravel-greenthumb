@@ -45,6 +45,8 @@
             <i class="bi bi-bag"></i>
           </li>
 
+          <span class="badge" style="background-color: #7C9087;"><strong class="text-light btn btn-sm">{{ $count }}</strong> product purchased</span>
+
         </ul>
 
       </div>

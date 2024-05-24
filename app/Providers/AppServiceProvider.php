@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Cart;
+use App\Models\User;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('layout.frontend', function ($view) {
             $view->with('categories', Category::get());
+        });
+
+        view()->composer('layout.frontend', function ($view) {
+            $view->with('count', Cart::where('user_id',Auth::user()->id)->first()->qty);
         });
     }
 }
