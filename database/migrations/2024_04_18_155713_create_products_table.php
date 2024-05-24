@@ -17,6 +17,7 @@ return new class extends Migration
             $table->float('price');
             $table->string('image')->nullable();
             $table->mediumText('detials')->nullable();
+            $table->boolean('featured')->default(false);
             $table->timestamps();
         });
     }

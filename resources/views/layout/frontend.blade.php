@@ -50,9 +50,24 @@
       </div>
 
       <div class="navLinks">
-        <div class="navitems">
+        <div class="navitems d-flex">
           <a href="{{ route('home') }}" class="active">Home</a>
-          <a href="#news">Categories</a>
+
+          <div class="dropdown">
+            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            @if (count($categories) > 0)
+            <ul class="dropdown-menu" style="z-index: 50">
+                
+              @foreach ($categories as $category)
+              
+              <li><a class="dropdown-item text-start" href="{{ route('category.archeive',$category->id) }}">{{ $category->title }}</a></li>
+              @endforeach
+              
+            </ul>
+            @endif
+          </div>
           <a href="{{ route('contactus') }}">Contact</a>
           <a href="{{ route('aboutus') }}">About</a>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -178,10 +193,11 @@
 
   <!--footer ends-->
 
-  <script src="{{asset('assets/js/index.js')}}"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
+  <script src="{{asset('assets/js/index.js')}}"></script>
 </body>
 
 </html>

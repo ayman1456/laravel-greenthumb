@@ -40,7 +40,7 @@ body {
 }
 /** COMMON CSS ENDS HERE */
 .topnav {
-    overflow: hidden;
+    
     background-color: rgba(255, 255, 255, 1);
     /*rgba(124,144,135,255) is the color of the navbar. Feel free to change it!*/
     display: flex;
