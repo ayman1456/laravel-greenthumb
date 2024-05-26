@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('layout.frontend', function ($view) {
-            $view->with('count', Cart::where('user_id',Auth::user()->id)->first()->qty);
+            $view->with('count',auth()->check()? Cart::where('user_id',Auth::user()->id)->sum("qty"):0);
         });
     }
 }
