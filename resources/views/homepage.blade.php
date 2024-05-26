@@ -17,7 +17,7 @@
 
 
 <section>
-  <h2 class="display-1  mx-auto mt-5" id="chead" style="margin-top: 40px; margin-bottom:40px">Featured Items</h2>
+  <h2 class="display-1  mx-auto mt-5" id="chead" style="margin-top: 40px; margin-bottom:40px">Featured Item</h2>
 
 
   <div class="container">
