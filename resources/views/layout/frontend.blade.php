@@ -190,7 +190,7 @@
     </div>
   </div>
   <div class="footer_bottom">
-    <p>{{ env('APP_NAME') }} 2024 CREATED BY Afrin (Web Developer).</p>
+    <p>{{ env('APP_NAME') }} Created by </p>
   </div>
 
   <!--footer ends-->
