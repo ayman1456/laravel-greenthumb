@@ -19,7 +19,9 @@ Route::get('/about-us', [MainController::class, 'aboutus'])->name('aboutus');
 Route::get('/category/{id}', [MainController::class, 'categoryArcheive'])->name('category.archeive');
 Route::get('/product/{id}', [MainController::class, 'productShow'])->name('product.show');
 Route::get('/add-to-cart/{id}', [MainController::class, 'addToCart'])->name('cart.add')->middleware('auth');
-// Route::get('/product-count', [MainController::class, 'productCount'])->name('product.count');
+Route::get('/cart-details', [MainController::class, 'cartDetails'])->name('cart.details')->middleware('auth');
+Route::put('/cart-details-update', [MainController::class, 'cartDetailsUpdate'])->name('cart.details.update')->middleware('auth');
+Route::get('/cart-details-delete/{id}', [MainController::class, 'cartDetailsDelete'])->name('cart.details.delete')->middleware('auth');
 
 
 

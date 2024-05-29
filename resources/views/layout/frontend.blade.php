@@ -45,7 +45,7 @@
             <i class="bi bi-bag"></i>
           </li>
 
-          <span class="badge" style="background-color: #7C9087;"><strong class="text-light btn btn-sm">{{ $count }}</strong> product purchased</span>
+          <a href="#"><span class="badge" style="background-color: #7C9087;"><strong class="text-light btn btn-sm">{{ $count }}</strong> product purchased</span></a>
 
         </ul>
 
@@ -200,6 +200,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
   <script src="{{asset('assets/js/index.js')}}"></script>
+
+  @stack('frontend_js')
 </body>
 
 </html>

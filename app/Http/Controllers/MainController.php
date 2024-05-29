@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use auth;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
@@ -85,6 +86,34 @@ class MainController extends Controller
         $category  = Category::find($id,['id','title']);
         return view('frontend.CategoryArcheive', compact('products', 'category'));   
         
+    }
+
+
+
+    public function cartDetails(){
+        $cartDetails = Cart::where('user_id', auth()->user()->id)->
+         with('products')->get();
+
+
+        // dd($cartDetails);
+        return view('frontend.cartDetails',compact('cartDetails'));    
+    }
+
+
+    public function cartDetailsUpdate(Request $request){
+        foreach($request->qty as $key=>$cartItem){
+            $cart = Cart::find($key);
+            $cart->qty = $cartItem;
+            $cart->save();
+        }
+        return back();
+    //  dd($request->all());
+    }
+
+
+    public function cartDetailsDelete($id){
+        $cart = Cart::find($id)->delete();
+        return back();
     }
 
 }
