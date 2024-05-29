@@ -96,8 +96,10 @@ class MainController extends Controller
 
 
         // dd($cartDetails);
-        return view('frontend.cartDetails',compact('cartDetails'));    
+        return view('frontend.cartDetails',compact('cartDetails'));  
+    
     }
+
 
 
     public function cartDetailsUpdate(Request $request){

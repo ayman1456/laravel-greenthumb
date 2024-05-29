@@ -99,7 +99,7 @@
                 <div class="update  d-flex justify-content-end">
                    <div class="gx-5">
                     <button class="border-0 btn btn-primary" style="background: #7C9087;">Update</button>
-                    <a href="#" style="background: #7C9087;" class="border-0 btn btn-primary" >Checkout</a>
+                    <a href="{{ route('checkout') }}" style="background: #7C9087;" class="border-0 btn btn-primary" >Checkout</a>
                    </div>
                 </div>
             </form>
