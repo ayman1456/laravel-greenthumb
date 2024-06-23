@@ -66,7 +66,7 @@
       <div class="col-lg-4 col-xl-3 col-6">
       
         <div class="card mt-2 mx-2">
-          <img class="card-img-top" src="{{ $product->image }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ asset('storage/'.$product->image) }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{ $product->name }}</h5>
             <p class="card-text">{{ Str::limit($product->detials, 30, '...') }}</p>

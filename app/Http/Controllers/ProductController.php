@@ -18,8 +18,9 @@ class ProductController extends Controller
     function editProducts($id)
     {
         $products = Product::latest()->get();
-        $editedProducts = Product::find($id);
+        $editedProducts = Product::with('categories:id')->find($id);
         $categories = Category::get();
+        // dd($editedProducts->categories->pluck('id')->toArray());
         return view('backend.products', compact('products', 'editedProducts', 'categories'));
     }
     function deleteProducts($id)

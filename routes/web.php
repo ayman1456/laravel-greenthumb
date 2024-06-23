@@ -22,25 +22,17 @@ Route::get('/add-to-cart/{id}', [MainController::class, 'addToCart'])->name('car
 Route::get('/cart-details', [MainController::class, 'cartDetails'])->name('cart.details')->middleware('auth');
 Route::put('/cart-details-update', [MainController::class, 'cartDetailsUpdate'])->name('cart.details.update')->middleware('auth');
 Route::get('/cart-details-delete/{id}', [MainController::class, 'cartDetailsDelete'])->name('cart.details.delete')->middleware('auth');
+Route::get('/order-success', function () {
+    return view('frontend.success');
+})->name('order.success');
 
 
 
-//cart routes
-// Route::prefix('/cart')->name('cart.')->controller(CartController::class)->group(function () {
-//     Route::get('/add/{id}', 'addToCart')->name('add');
-//     Route::get('/view', 'viewCart')->name('view');
-//     Route::POST('/update', 'updateCart')->name('update');
-//     Route::GET('/delete/{id}', 'deleteCart')->name('delete');
-// });
-// Route::prefix('/checkout')->name('checkout.')->controller(CheckoutController::class)->group(function () {
-//     Route::get('/', 'checkout')->name('view');
-// });
+//* MY ORDERS
+
+Route::get('/my-orders', [OrderController::class, 'myOrders'])->name('myOrders');
 
 
-
-
-//orders route
-Route::get('/orders', [OrderController::class, 'orders'])->name('orders.show');
 
 
 

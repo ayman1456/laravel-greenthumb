@@ -17,7 +17,7 @@
   <!--navbar starts-->
   <nav class="navbar topnav navbar-expand-lg bg-body-tertiary d-none d-lg-block">
     <div class="container-fluid justify-content-lg-between">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{{ url('/') }}">
         <img src="{{asset('assets/img/isolated-monochrome-black.svg')}}" height="100%" width="100px">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -45,7 +45,7 @@
             <i class="bi bi-bag"></i>
           </li>
 
-          <a href="#"><span class="badge" style="background-color: #7C9087;"><strong class="text-light btn btn-sm">{{ $count }}</strong> product purchased</span></a>
+          <a href="{{ route('cart.details') }}"><span class="badge" style="background-color: #7C9087;"><strong class="text-light btn btn-sm">{{ $count }}</strong> products</span></a>
 
         </ul>
 

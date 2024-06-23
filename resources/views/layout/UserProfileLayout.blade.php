@@ -15,7 +15,7 @@
                             </li>
                             <li class="{{ request()->routeIs('profile') ? 'active' : null }}"><a href="#"><span
                                         class="me-2"><i class="bi bi-person"></i></span>Profile</a></li>
-                            <li class=""> <a href="#"><span class="me-2"><i class="bi bi-archive"></i></span> My
+                            <li class="{{ request()->routeIs('myOrders') ? 'active' : null }}"> <a href="{{ route('myOrders') }}"><span class="me-2"><i class="bi bi-archive"></i></span> My
                                     Orders</a></li>
                             <li class=""> <a href="#"><span class="me-2"><i class="bi bi-stars"></i></span> Reviews</a>
                             </li>
