@@ -53,7 +53,9 @@
               @enderror
             </div>
             <div class="input-style-1 mb-2">
+              @if (isset($editedProducts))
               <img src="{{ asset('storage/'.$editedProducts->image) }}" width="50%" alt="" class="imagePreview">
+              @endif
               <input type="file" class="form-control" placeholder="Food Price" name="image" id="foodImage">
               @error('image')
               <span class="text-danger">
@@ -73,7 +75,8 @@
             <div class="my-2">
               <select name="categories[]" class="mySelect2" style="width:100% " multiple>
                 @foreach ($categories as $item)
-                <option {{ in_array($item->id,$editedProducts->categories->pluck('id')->toArray()) ? 'selected' : 'hlw' }}
+                <option {{ in_array($item->id, $editedProducts ? $editedProducts?->categories->pluck('id')->toArray() : []) ? 'selected' : 'hlw'
+                  }}
                   value="{{$item->id}}">{{$item->title}}</option>
                 @endforeach
               </select>
