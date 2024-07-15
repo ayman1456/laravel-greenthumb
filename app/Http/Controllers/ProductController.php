@@ -13,7 +13,7 @@ class ProductController extends Controller
         $products = Product::with("categories")->latest()->get();
         $categories = Category::get();
         $editedProducts = null;
-        return view('backend.products', compact('products', 'categories','editedProducts'));
+        return view('backend.products', compact('products', 'categories', 'editedProducts'));
     }
     function editProducts($id)
     {
@@ -54,6 +54,15 @@ class ProductController extends Controller
         }
         $products->save();
         $products->categories()->sync($req->categories);
+        return back();
+    }
+
+    function updatedFeatured($id)
+    {
+
+        $product = Product::find($id);
+        $product->featured =  !$product->featured;
+        $product->save();
         return back();
     }
 }

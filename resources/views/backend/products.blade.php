@@ -75,7 +75,8 @@
             <div class="my-2">
               <select name="categories[]" class="mySelect2" style="width:100% " multiple>
                 @foreach ($categories as $item)
-                <option {{ in_array($item->id, $editedProducts ? $editedProducts?->categories->pluck('id')->toArray() : []) ? 'selected' : 'hlw'
+                <option {{ in_array($item->id, $editedProducts ? $editedProducts?->categories->pluck('id')->toArray() :
+                  []) ? 'selected' : 'hlw'
                   }}
                   value="{{$item->id}}">{{$item->title}}</option>
                 @endforeach
@@ -99,6 +100,7 @@
               <th>Name</th>
               <th>Price</th>
               <th>Categories</th>
+              <th>Featured</th>
               <th>Action</th>
             </tr>
             @foreach ($products as $key=>$product)
@@ -113,6 +115,15 @@
               <td>@foreach ($product->categories as $category)
                 <span>{{$category->title}}</span>
                 @endforeach
+              </td>
+              <td>
+                <a href="{{ route('products.featured', $product->id) }}" class="text-warning text-center d-block">
+                  @if (!$product->featured)
+                  <span><i class="fa-regular fa-star"></i></span>
+                  @else
+                  <span><i class="fa-solid fa-star"></i></span>
+                  @endif
+                </a>
               </td>
               <td>
                 <a href="{{ route('products.edit', $product->id) }}" class="text-primary"><i
