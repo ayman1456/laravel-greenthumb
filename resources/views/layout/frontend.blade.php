@@ -25,31 +25,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <ul class="navbar-nav m-auto mb-2 mb-lg-0 align-items-center">
-          <li class="nav-item">
-            <form action=""><input placeholder="Search here...." class="navsearch" type="text"></form>
-          </li>
-          <li class="nav-item mx-4 ">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </li>
-          <li class="nav-item mx-4">
-            <a class="text-dark" href="{{ route('profile') }}"><i class="fa-regular fa-user"></i></a>
-          </li>
-
-          <li class="nav-item mx-4">
-            <i class="fa-regular fa-heart"></i>
-          </li>
-          <li class="nav-item mx-4">
-            <i class="bi bi-bag"></i>
-          </li>
-
-          <a href="{{ route('cart.details') }}"><span class="badge" style="background-color: #7C9087;"><strong class="text-light btn btn-sm">{{ $count }}</strong> products</span></a>
-
-        </ul>
-
-      </div>
+    
 
       <div class="navLinks">
         <div class="navitems d-flex">
@@ -75,6 +51,8 @@
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
           </a>
+          <a class="text-dark" href="{{ route('profile') }}">Profile</a>
+          <a href="{{ route('cart.details') }}"><span class="badge" style="background-color: #7C9087;"><strong class="text-light btn btn-sm">{{ $count }}</strong> products</span></a>
         </div>
       </div>
 
@@ -190,7 +168,7 @@
     </div>
   </div>
   <div class="footer_bottom">
-    <p>{{ env('APP_NAME') }} Created by </p>
+    <p>{{ env('APP_NAME') }} Created by Afrin </p>
   </div>
 
   <!--footer ends-->

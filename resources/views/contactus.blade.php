@@ -43,7 +43,7 @@
   </div>
 
 <!--email-->
-<div class="mail col-lg-5 mx-auto" style="padding:20px; border-radius:20px; background-color:#EAE9E9">
+<!-- <div class="mail col-lg-5 mx-auto" style="padding:20px; border-radius:20px; background-color:#EAE9E9">
     <form>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
@@ -60,5 +60,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-</div>
+</div> -->
 @endsection

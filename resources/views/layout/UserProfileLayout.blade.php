@@ -17,8 +17,7 @@
                                         class="me-2"><i class="bi bi-person"></i></span>Profile</a></li>
                             <li class="{{ request()->routeIs('myOrders') ? 'active' : null }}"> <a href="{{ route('myOrders') }}"><span class="me-2"><i class="bi bi-archive"></i></span> My
                                     Orders</a></li>
-                            <li class=""> <a href="#"><span class="me-2"><i class="bi bi-stars"></i></span> Reviews</a>
-                            </li>
+                          
                             <li class=""> <a href="{{ route('logout') }}" onclick="event.preventDefault();document.querySelector('#logout').submit()"><span class="me-2"><i
                                             class="bi bi-box-arrow-in-left"></i></span> Logout</a>
                                 <form id="logout" action="{{ route('logout') }}" method="POST">

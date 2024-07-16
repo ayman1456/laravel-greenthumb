@@ -3,10 +3,10 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-4">
                     <img class="img-fluid" src="{{ asset('storage/'.$product->image) }}" alt="">
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-8">
                     <h4>{{ $product->name }}</h4>
                     <span>{{ $product->price }} $ </span>
 

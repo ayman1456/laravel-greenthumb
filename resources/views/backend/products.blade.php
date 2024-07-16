@@ -25,7 +25,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-lg-5 ">
+    <div class="col-lg-4 ">
       <div class="card">
         <div class="card-header">
           {{ isset($editedProducts) ? "Edit" : "Add" }} Product
@@ -90,7 +90,7 @@
 
     <!--right side stars-->
 
-    <div class="col-lg-7 ">
+    <div class="col-lg-8 ">
       <div class="card-style">
         <div class="table-responsive">
           <table class="table">
