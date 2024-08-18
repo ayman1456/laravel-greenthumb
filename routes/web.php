@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\OrderController;
 
@@ -25,7 +26,7 @@ Route::get('/cart-details-delete/{id}', [MainController::class, 'cartDetailsDele
 Route::get('/order-success', function () {
     return view('frontend.success');
 })->name('order.success');
-
+Route::post('/user-update/{id}', [UserController::class,'updateUser'])->name('user.profile.update');
 
 
 //* MY ORDERS

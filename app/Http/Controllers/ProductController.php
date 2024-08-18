@@ -12,15 +12,19 @@ class ProductController extends Controller
     {
         $products = Product::with("categories")->latest()->get();
         $categories = Category::get();
-
-        return view('backend.products', compact('products', 'categories'));
+        $editedProducts = null;
+        return view('backend.products', compact('products', 'categories', 'editedProducts'));
     }
     function editProducts($id)
     {
+        $editedProducts = null;
         $products = Product::latest()->get();
-        $editedProducts = Product::with('categories:id')->find($id);
+        if ($id) {
+
+            $editedProducts = Product::with('categories:id')->find($id);
+        }
         $categories = Category::get();
-        // dd($editedProducts->categories->pluck('id')->toArray());
+
         return view('backend.products', compact('products', 'editedProducts', 'categories'));
     }
     function deleteProducts($id)
@@ -50,6 +54,15 @@ class ProductController extends Controller
         }
         $products->save();
         $products->categories()->sync($req->categories);
+        return back();
+    }
+
+    function updatedFeatured($id)
+    {
+
+        $product = Product::find($id);
+        $product->featured =  !$product->featured;
+        $product->save();
         return back();
     }
 }

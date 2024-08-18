@@ -22,6 +22,7 @@ Route::prefix('admin/')->group(function () {
     Route::get('/products/edit/{id}', [ProductController::class, 'editProducts'])->name('products.edit');
     Route::post('/products/{id?}', [ProductController::class, 'saveProducts'])->name('products.save');
     Route::get('/products-delete/{id}', [ProductController::class, 'deleteProducts'])->name('products.delete');
+    Route::get('/products-featured/{id}', [ProductController::class, 'updatedFeatured'])->name('products.featured');
 
 
     //categories route

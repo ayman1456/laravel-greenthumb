@@ -644,10 +644,12 @@ class SslCommerzPaymentController extends Controller
     $currency = $request->input('currency');
 
     //* CLEAR CART
+    if(auth()->user()){
 
-    $carts = Cart::where('user_id', auth()->user()->id)->get();
-    foreach ($carts as $cart) {
-      $cart->delete();
+      $carts = Cart::where('user_id', auth()->user()->id)->get();
+      foreach ($carts as $cart) {
+        $cart->delete();
+      }
     }
 
 
