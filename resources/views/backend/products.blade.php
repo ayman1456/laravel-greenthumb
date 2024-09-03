@@ -73,6 +73,7 @@
               @enderror
             </div>
             <div class="my-2">
+              <label> Category </label>
               <select name="categories[]" class="mySelect2" style="width:100% " multiple>
                 @foreach ($categories as $item)
                 <option {{ in_array($item->id, $editedProducts ? $editedProducts?->categories->pluck('id')->toArray() :
@@ -80,6 +81,12 @@
                   }}
                   value="{{$item->id}}">{{$item->title}}</option>
                 @endforeach
+              </select>
+            </div>
+            <div class="my-2">
+              <select name="stock" class="form-control" style="width:100% " >
+                  <option {{ $editedProducts->stock == 1 ? 'selected' : '' }} value="{{ true }}">In Stock</option>
+                  <option {{ $editedProducts->stock == 0 ? 'selected' : '' }}  value="{{ false }}">Out of Stock</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>

@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Library\SslCommerz\SslCommerzNotification;
 
 class SslCommerzPaymentController extends Controller
@@ -644,14 +645,18 @@ class SslCommerzPaymentController extends Controller
     $currency = $request->input('currency');
 
     //* CLEAR CART
+
+    $authUser = auth()->user();
+
     if(auth()->user()){
 
       $carts = Cart::where('user_id', auth()->user()->id)->get();
       foreach ($carts as $cart) {
         $cart->delete();
       }
+      
     }
-
+    
 
     $sslc = new SslCommerzNotification();
 
@@ -677,6 +682,7 @@ class SslCommerzPaymentController extends Controller
       }
     } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
 
+      Auth::login($authUser);
       return to_route('order.success');
 
       /*

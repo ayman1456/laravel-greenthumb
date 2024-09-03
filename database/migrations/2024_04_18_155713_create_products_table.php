@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->float('price');
+            $table->boolean('stock')->default(true);
             $table->string('image')->nullable();
             $table->mediumText('detials')->nullable();
             $table->boolean('featured')->default(false);

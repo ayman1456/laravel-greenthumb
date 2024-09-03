@@ -12,10 +12,14 @@
 
                     <div class="details mt-3">
                         <p>{{ $product->detials }}</p>
+                        @if ($product->stock)
 
                         <div class="btn-group">
                             <a class="btn btn-primary mt-3" href="{{ route('cart.add', $product->id) }}">Add to Cart</a>
                         </div>
+                        @else
+                        <h4 class="text-danger mt-3">Out of stock</h4>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -31,6 +35,9 @@
                             <h4>{{ $relatedProduct->name }}</h4>
                             <span>{{ $relatedProduct->price }}$</span>
                             <p>{{ Str::limit($relatedProduct->detials, 30, '...') }} </p>
+
+                            
+
                             <a href="{{ route('product.show', $relatedProduct->id) }}" class="btn btn-primary w-100 mt-3">View Details</a>
                         </div>
                     </div>
@@ -43,4 +50,5 @@
         </div>
     </section>
 @endsection
+
 

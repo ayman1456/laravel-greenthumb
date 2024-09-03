@@ -35,7 +35,7 @@ class ProductController extends Controller
 
     function saveProducts(Request $req, $id = null)
     {
-
+        // dd($req->all());
 
         $req->validate([
             'name' => 'required|unique:products,name,' . $id,
@@ -43,7 +43,7 @@ class ProductController extends Controller
             'details' => 'required'
         ]);
 
-
+      
         $products = Product::findOrNew($id);
         $products->name = $req->name;
         $products->price = $req->price;
@@ -52,6 +52,7 @@ class ProductController extends Controller
             $fileName = $req->image->store('products',  'public');
             $products->image = $fileName;
         }
+        $products->stock = $req->stock == 1 ? true : false;
         $products->save();
         $products->categories()->sync($req->categories);
         return back();
