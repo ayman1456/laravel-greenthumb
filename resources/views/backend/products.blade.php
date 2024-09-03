@@ -35,7 +35,7 @@
             enctype="multipart/form-data">
             @csrf
             <div class="input-style-1 mb-2">
-              <input type="text" class="form-control" placeholder="Food Name" name="name"
+              <input type="text" class="form-control" placeholder="Product Name" name="name"
                 value="{{ $editedProducts->name ?? null }}">
               @error('title')
               <span class="text-danger">
@@ -44,7 +44,7 @@
               @enderror
             </div>
             <div class="input-style-1 mb-2">
-              <input type="number" class="form-control" placeholder="Food Price" name="price"
+              <input type="number" class="form-control" placeholder="Product Price" name="price"
                 value="{{ $editedProducts->price ?? null }}">
               @error('price')
               <span class="text-danger">
@@ -56,7 +56,7 @@
               @if (isset($editedProducts))
               <img src="{{ asset('storage/'.$editedProducts->image) }}" width="50%" alt="" class="imagePreview">
               @endif
-              <input type="file" class="form-control" placeholder="Food Price" name="image" id="foodImage">
+              <input type="file" class="form-control" placeholder="Product Price" name="image" id="foodImage">
               @error('image')
               <span class="text-danger">
                 {{ $message }}
